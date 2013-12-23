@@ -330,8 +330,12 @@ function ninja_forms_get_field_class($field_id){
 		$address_class = 'address state';
 	}
 
-	if ( isset ( $data['user_city'] ) and $data['user_city'] == 1 ) {
-		$address_class = 'address city';
+	if ( isset ( $data['user_zip'] ) and $data['user_zip'] == 1 ) {
+		$address_class = 'address zip';
+	}
+
+	if ( '_country' == $field_row['type'] ) {
+		$address_class = 'address country';
 	}
 
 	$listen_class = '';
